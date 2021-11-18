@@ -23,9 +23,9 @@ export const App: FunctionComponent<Props> = (props) => {
         Active: (task: TodoItem) => !task.completed,
         Completed: (task: TodoItem) => task.completed
     };
-    const FILTER_NAMES = Object.keys(filterMap);
+    const filterNames = Object.keys(filterMap);
 
-    const filterList = FILTER_NAMES.map(name => (
+    const filterList = filterNames.map(name => (
         <FilterButton
             key={name}
             name={name}
@@ -35,7 +35,7 @@ export const App: FunctionComponent<Props> = (props) => {
     ));
 
     let addTask = (name: string) => {
-        const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
+        const newTask: TodoItem = { id: "todo-" + nanoid(), name: name, completed: false };
         setTasks([...tasks, newTask]);
     };
 
