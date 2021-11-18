@@ -18,7 +18,7 @@ export const Todo: FunctionComponent<Props> = (props) => {
 
     let handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        props.editTask(props.id, newName);
+        props.editTask(props.id, newName.trim() !== "" ? newName : "(new todo task)");
         setNewName("");
         setEditing(false);
     }
