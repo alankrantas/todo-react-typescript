@@ -1,10 +1,10 @@
 # Todo-React-TypeScript
 
-This is the TypeScript version of the TodoMatic example on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the [TypeScript](https://www.typescriptlang.org/) version of the **TodoMatic** example for [React](https://reactjs.org/) on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Using This Project
 
-In the project directory, you can run:
+Install [Node.js](https://nodejs.org/en/download/) and download this project. Run the following console commands under the project directory:
 
 ### `npm start`
 
@@ -26,8 +26,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Run Local Server
 
-Install Python and run the console command under the project directory:
+To run the build in local server, install Python and run the console command under the project directory:
 
-```python -m http.server 8080 --directory ./build```
+```
+npm install -g serve
+serve -s ./build
+```
 
-Then open ```localhost:8080``` to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
