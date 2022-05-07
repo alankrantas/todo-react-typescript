@@ -27,8 +27,8 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 To run the build in local server, install Python and run the console command under the project directory:
 
 ```
-npm install -g serve
-serve -s ./build
+npm install -g http-server
+http-server ./build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
