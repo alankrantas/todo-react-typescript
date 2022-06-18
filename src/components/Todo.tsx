@@ -1,5 +1,5 @@
 import { ChangeEvent, FunctionComponent, useState } from "react";
-import { TodoItem } from "../data/entities"
+import { TodoItem } from "../data/entities";
 
 interface Props extends TodoItem {
     toggleTaskCompleted: (id: string) => void,
@@ -12,14 +12,13 @@ export const Todo: FunctionComponent<Props> = (props) => {
     const [isEditing, setEditing] = useState<boolean>(false);
     const [newName, setNewName] = useState<string>(props.name);
 
-    let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setNewName(e.target.value);
     }
 
-    let handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         props.editTask(props.id, newName.trim() !== "" ? newName : "(new todo task)");
-        setNewName("");
         setEditing(false);
     }
 
