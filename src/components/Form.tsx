@@ -8,11 +8,11 @@ export const Form: FunctionComponent<Props> = (props) => {
 
     const [name, setName] = useState<string>("");
 
-    let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
     };
 
-    let handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         props.addTask(name.trim() !== "" ? name : "(new todo task)");
         setName("");
