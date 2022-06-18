@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { TodoItem } from "./data/entities"
 import { nanoid } from "nanoid";
 
-const DATA: TodoItem[] = [
+const data: TodoItem[] = [
     { name: "Learn JavaScript", completed: true, id: "todo-" + nanoid() },
     { name: "Understand TypeScript", completed: false, id: "todo-" + nanoid() },
     { name: "Build website with React", completed: false, id: "todo-" + nanoid() }
@@ -14,7 +14,7 @@ const DATA: TodoItem[] = [
 
 ReactDOM.render(
     <React.StrictMode>
-        <App tasks={DATA}/>
+        <App tasks={data}/>
     </React.StrictMode>,
     document.getElementById('root')
 );
