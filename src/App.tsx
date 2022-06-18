@@ -2,7 +2,7 @@ import { FunctionComponent, useState } from "react";
 import { Todo } from "./components/Todo";
 import { Form } from "./components/Form";
 import { FilterButton } from "./components/FilterButton";
-import { TodoItem } from "./data/entities"
+import { TodoItem } from "./data/entities";
 import { nanoid } from "nanoid";
 
 interface Props {
@@ -34,32 +34,28 @@ export const App: FunctionComponent<Props> = (props) => {
         />
     ));
 
-    let addTask = (name: string) => {
+    const addTask = (name: string) => {
         const newTask: TodoItem = { id: "todo-" + nanoid(), name: name, completed: false };
         setTasks([...tasks, newTask]);
     };
 
-    let toggleTaskCompleted = (id: string) => {
+    const toggleTaskCompleted = (id: string) => {
         const updatedTasks: TodoItem[] = tasks.map(task => {
-            if (id === task.id) {
-                return { ...task, completed: !task.completed }
-            }
+            if (id === task.id) return { ...task, completed: !task.completed };
             return task;
         });
         setTasks(updatedTasks);
     };
 
-    let editTask = (id: string, newName: string) => {
+    const editTask = (id: string, newName: string) => {
         const editedTaskList: TodoItem[] = tasks.map(task => {
-            if (id === task.id) {
-                return { ...task, name: newName }
-            }
+            if (id === task.id) return { ...task, name: newName };
             return task;
         });
         setTasks(editedTaskList);
     };
 
-    let deleteTask = (id: string) => {
+    const deleteTask = (id: string) => {
         const remainingTasks: TodoItem[] = tasks.filter(task => id !== task.id);
         setTasks(remainingTasks);
     };
@@ -73,8 +69,8 @@ export const App: FunctionComponent<Props> = (props) => {
                 completed={task.completed}
                 key={task.id}
                 toggleTaskCompleted={toggleTaskCompleted}
-                deleteTask={deleteTask}
                 editTask={editTask}
+                deleteTask={deleteTask}
             />
         ));
 
